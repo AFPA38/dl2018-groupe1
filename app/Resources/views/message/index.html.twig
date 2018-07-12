@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Message !{% endblock %}
+
+{% block stylesheets %}
+<link rel="stylesheet" type="text/css" href="{{ asset('css/message.css')}}">
+{% endblock %}
+
+{% block body %}
+<div class="container">
+
+    <div id="content">
+        <h1>Contact</h1>
+
+        <form action=" " method="post" autocomplete="on">
+            <p>
+                <label for="subject">
+                    <i class="fas fa-bullhorn"></i>
+                     Objet
+                    <span class="required">*</span>
+                </label>
+                <input type="text" name="subject" id="subject" placeholder="Sujet du mail" />
+            </p>
+
+            <p>
+                <label for="message">
+                    <i class="fas fa-envelope"></i>
+                     Message
+                <span class="required">*</span>
+                </label>
+                <textarea placeholder="Votre message" required="required"></textarea>
+            </p>
+
+            <p class="indication">
+                <span class="required">*</span> champs obligatoire
+            </p>
+
+            <input type="submit" value=" Envoyé le mail ! " />
+
+        </form>
+    </div>
+
+
+</div>
+
+
+
+{% endblock %}
