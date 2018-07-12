@@ -15,7 +15,7 @@
 
                     <div class="list-group" style="border: 1px solid purple; height: 60%; overflow-x: scroll">
                         {% for user in users %}
-                            <a href="#{{ user.speudo }}" class="list-group-item list-group-item-action">{{ user.speudo }}</a>
+                            <a href="#{{ user.username }}" class="list-group-item list-group-item-action">{{ user.speudo }}</a>
                         {% endfor %}
                     </div>
 
@@ -27,10 +27,10 @@
                         {% for user in users %}
 
                             <div class="col-md-3">
-                                <div id="{{ user.speudo }}" class="card">
-                                    <img class="card-img-top" src="{{ asset('img/avatar/{{ user.img }}') }}">
+                                <div id="{{ user.username }}" class="card">
+                                    <img class="card-img-top" src="{{ asset('img/avatar/{{ user.avatar }}') }}">
                                     <div class="card-block">
-                                        <h4 class="card-title mt-3">{{ user.speudo }}</h4>
+                                        <h4 class="card-title mt-3">{{ user.username }}</h4>
                                         <div class="meta">
                                             <h5>22 ans</h5>
                                         </div>
