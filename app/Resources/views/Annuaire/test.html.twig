@@ -2,33 +2,29 @@
 
 {% block body %}
 
-<div>
-   {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
-       {{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }} |
-       <a href="{{ path('fos_user_security_logout') }}">
-       {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
-       </a>
-   {% else %}
-       <a href="{{ path('fos_user_security_login') }}">{{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a>
-   {% endif %}
+<div style="margin-top : 50px;">
 
-</div>
-
-{% if app.request.hasPreviousSession %}
-   {% for type, messages in app.session.flashbag.all() %}
-       {% for message in messages %}
-           <div class="flash-{{ type }}">
-               {{ message }}
-           </div>
-       {% endfor %}
-   {% endfor %}
-{% endif %}
-
-<div>
-
-   {% block fos_user_content %}
-   {% endblock fos_user_content %}
-
-</div>
-
+    <h1>Liste des Utilisateurs</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Username</th>
+                <th>email</th>
+                <th>Roles</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for user in users %}
+                <tr>
+                    <td>{{ user.username }}</td>
+                    <td>{{ user.email }}</td>
+                    <td>{% for role in user.roles %}
+                            {{ role }},
+                        {% endfor %}</td>
+                    <td></td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
 {% endblock body %}
