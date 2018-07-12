@@ -1,0 +1,58 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Annuaire !{% endblock %}
+
+{% block body %}
+
+    <main role="main" class="main">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12 col-md-3 col-xl-3 bd-sidebar" style="text-align: center; border: 1px solid black;">
+
+                    <div class="" style="border: 1px solid green; height: 5%; margin-top : 2%;">
+
+                    </div>
+
+                    <div class="list-group" style="border: 1px solid purple; height: 60%; overflow-x: scroll">
+                        {% for user in users %}
+                            <a href="#{{ user.speudo }}" class="list-group-item list-group-item-action">{{ user.speudo }}</a>
+                        {% endfor %}
+                    </div>
+
+                </div>
+                <main class="col-12 col-md-9 col-xl-9 py-md-3 pl-md-5 bd-content" style="border: 1px solid red;">
+                    <div class="row">
+
+
+                        {% for user in users %}
+
+                            <div class="col-md-3">
+                                <div id="{{ user.speudo }}" class="card">
+                                    <img class="card-img-top" src="{{ asset('img/avatar/{{ user.img }}') }}">
+                                    <div class="card-block">
+                                        <h4 class="card-title mt-3">{{ user.speudo }}</h4>
+                                        <div class="meta">
+                                            <h5>22 ans</h5>
+                                        </div>
+                                    </div>
+                                    <div class="card-footer">
+                                        <div class="icon pull-right">
+                                            <a href="#"><i class="fas fa-address-card"></i></a>
+                                            <a href="#"><i class="fas fa-envelope"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        {% endfor %}
+
+
+
+
+                    </div>
+                </main>
+            </div>
+        </div>
+    </main>
+
+{% endblock %}
