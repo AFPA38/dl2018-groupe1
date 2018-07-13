@@ -22,6 +22,8 @@ class User extends BaseUser
      */
     protected $id;
 
+    private $avatar;
+
 
     /**
      * Get id
@@ -32,4 +34,14 @@ class User extends BaseUser
     {
         return $this->id;
     }
+
+
+    public function getAvatar()
+    {
+        return $this->avatar;
+    }
+
+
+
+
 }

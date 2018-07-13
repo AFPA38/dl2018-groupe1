@@ -14,7 +14,11 @@ class AnnuaireController extends Controller
      */
     public function indexAction(Request $request)
     {
-        return $this->render('annuaire/test.html.twig');
+        $userManager = $this->get('fos_user.user_manager');
+        $users = $userManager->findUsers();
+        return $this->render('annuaire/index.html.twig', array(
+            'users' => $users,
+        ));
     }
 
 
