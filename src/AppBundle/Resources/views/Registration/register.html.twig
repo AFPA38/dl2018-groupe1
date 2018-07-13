@@ -1,0 +1,29 @@
+{% extends "template/fosUser.html.twig" %}
+
+{% block fos_user_content %}
+    <form action="{{ path("fos_user_registration_register") }}" method="post" class="form-signin"> 
+        <div class="login-container">
+            <h1>S'enregistrer :</h1><br>
+            <div id="fos_user_registration_form">
+                <div>
+                    <label for="fos_user_registration_form_email" class="required">Adresse e-mail</label>
+                    <input type="email" id="fos_user_registration_form_email" name="fos_user_registration_form[email]" required="required" />
+                </div>
+                <div>
+                    <label for="fos_user_registration_form_username" class="required">Nom d&#039;utilisateur</label>
+                    <input type="text" id="fos_user_registration_form_username" name="fos_user_registration_form[username]" required="required" maxlength="180" pattern=".{2,}" />
+                </div>
+                <div>
+                    <label for="fos_user_registration_form_plainPassword_first" class="required">Mot de passe</label>
+                    <input type="password" id="fos_user_registration_form_plainPassword_first" name="fos_user_registration_form[plainPassword][first]" required="required" autocomplete="new-password" />
+                </div>
+                <div>
+                    <label for="fos_user_registration_form_plainPassword_second" class="required">Répéter le mot de passe</label>
+                    <input type="password" id="fos_user_registration_form_plainPassword_second" name="fos_user_registration_form[plainPassword][second]" required="required" autocomplete="new-password" />
+                
+            <div>
+                <input type="submit" value="Créer un compte" class="login login-submit"/>
+            </div>
+        </div> 
+    </form>
+{% endblock %}
