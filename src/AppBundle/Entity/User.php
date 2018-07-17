@@ -25,23 +25,8 @@ class User extends BaseUser
     private $avatar;
 
 
-    /**
-     * Get id
-     *
-     * @return int
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
-
-
-    public function getAvatar()
-    {
-        return $this->avatar;
-    }
-
-
-
-
+  public function __construct()
+  {
+      parent ::__construct();
+  }
 }

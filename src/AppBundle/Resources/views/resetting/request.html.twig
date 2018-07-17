@@ -1,0 +1,14 @@
+{% trans_default_domain 'FOSUserBundle' %}
+{% extends "template/fosUser.html.twig" %}
+
+{% block fos_user_content %}
+    <form action="{{ path('fos_user_resetting_send_email') }}" method="POST" class="fos_user_resetting_request">
+        <div class="login-container">
+            <h1>Mot de passe oublié :</h1>
+            <br>
+            <label for="username">Veuillez saisir votre nom d'utilisateur pour réinitialiser votre mot de passe.</label>
+            <input type="text" id="username" name="username" required="required" />
+            <input class="login login-submit" type="submit" value="valider" />
+        </div>
+    </form>
+{% endblock fos_user_content %}
