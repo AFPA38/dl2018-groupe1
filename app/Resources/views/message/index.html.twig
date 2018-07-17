@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Message !{% endblock %}
+{% block title %}Message{% endblock %}
 
 {% block stylesheets %}
 <link rel="stylesheet" type="text/css" href="{{ asset('css/message.css')}}">
@@ -12,14 +12,14 @@
     <div id="content">
         <h1>Contact</h1>
 
-        <form action=" " method="post" autocomplete="on">
+        <form action="{{ path('Message_SendPost', { 'id': user.id } ) }}" method="post" autocomplete="on">
             <p>
                 <label for="subject">
                     <i class="fas fa-bullhorn"></i>
                      Objet
                     <span class="required">*</span>
                 </label>
-                <input type="text" name="subject" id="subject" placeholder="Sujet du mail" />
+                <input type="text" name="object" id="subject" placeholder="Sujet du mail" />
             </p>
 
             <p>
@@ -28,7 +28,7 @@
                      Message
                 <span class="required">*</span>
                 </label>
-                <textarea placeholder="Votre message" required="required"></textarea>
+                <textarea name="message" placeholder="Votre message" required="required"></textarea>
             </p>
 
             <p class="indication">
@@ -38,6 +38,7 @@
             <input type="submit" value=" Envoyé le mail ! " />
 
         </form>
+
     </div>
 
 

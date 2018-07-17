@@ -70,13 +70,13 @@ form .fas {
 /* Here comes to good stuff : content styling */
 #content {
 position:relative;
-margin:50px auto;
+margin:100px auto;
 width: 70%;
 min-height:200px;
 z-index:100;
 padding:30px;
 /* My stipped background */
-background: #D1D1D1;
+background: #ada7a7;
 /* Old browsers */
 background: -moz-repeating-linear-gradient(-45deg, #EFC1CB, #EFC1CB 30px, #F2F2F2 30px, #F2F2F2 40px, #C2E8F5 40px, #C2E8F5 70px, #F2F2F2 70px, #F2F2F2 80px);
 /* FF3.6+ */

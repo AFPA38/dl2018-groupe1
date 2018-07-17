@@ -10,7 +10,7 @@ class AnnuaireController extends Controller
 {
 
     /**
-     * @Route("/annuaire", name="Annuaire_Show")
+     * @Route("/annuaire", name="Annuaire_Index")
      */
     public function indexAction(Request $request)
     {
@@ -21,7 +21,13 @@ class AnnuaireController extends Controller
         ));
     }
 
-
+    /**
+     * @Route("/annuaire/{id}", name="Annuaire_Show")
+     */
+    public function showSingleAction($id)
+    {
+        return $this->render('annuaire/singleView.html.twig');
+    }
 
 
 

@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Annuaire !{% endblock %}
+{% block title %}Annuaire{% endblock %}
 
 {% block body %}
 
@@ -28,7 +28,7 @@
 
                             <div class="col-md-3">
                                 <div id="{{ user.username }}" class="card">
-                                    <img class="card-img-top" src="{{ asset('img/avatar/{{ user.avatar }}') }}">
+                                    <img class="card-img-top" src="{{ asset('img/avatar/profiledefault.png') }}">
                                     <div class="card-block">
                                         <h4 class="card-title mt-3">{{ user.username }}</h4>
                                         <div class="meta">
@@ -37,17 +37,14 @@
                                     </div>
                                     <div class="card-footer">
                                         <div class="icon pull-right">
-                                            <a href="#"><i class="fas fa-address-card"></i></a>
-                                            <a href="#"><i class="fas fa-envelope"></i></a>
+                                            <a href="{{ path('Annuaire_Show', { 'id': user.id } ) }}"><i class="fas fa-address-card"></i></a>
+                                            <a href="{{ path('Message_Index', { 'id': user.id } ) }}"><i class="fas fa-envelope"></i></a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
 
                         {% endfor %}
-
-
-
 
                     </div>
                 </main>

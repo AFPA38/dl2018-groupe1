@@ -7,7 +7,7 @@
                 <ul class="navbar-nav">
                     {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ path('Annuaire_Show') }}">Annuaire</a>
+                            <a class="nav-link" href="{{ path('Annuaire_Index') }}">Annuaire</a>
                         </li>
                     {% endif %}
                 </ul>
@@ -19,7 +19,7 @@
                         {# SI CONNECTER #}
                         {% if is_granted('ROLE_ADMIN') %}
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Admin</a>
+                                <a class="nav-link" href="{{ path('Admin_Index')}}">Admin</a>
                             </li>
                         {% endif %}
                         <li class="nav-item">
