@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+{% for msg in app.session.flashBag.get('success') %}
+    {{ msg }}
+{% endfor %}
+{{ form_start (form) }}
+    {{ form_row (form.title) }}
+    {{ form_row (form.content) }}
+    {{ form_row (form.type) }}
+    <input type="submit" value="Publier" formnovalidate>
+{{ form_end (form) }}
+{% endblock %}

@@ -1,0 +1,10 @@
+{% block stylesheet %}
+    <link rel="stylesheet" href="{{ asset ('css/style.css') }}">
+{% endblock %}
+
+{% block body %}
+    {{ form_start (form) }}
+    {{ form_row (form.content) }}
+    <input type="submit" value="Envoyer !" formnovalidate>
+{{ form_end (form) }}
+{% endblock %}
