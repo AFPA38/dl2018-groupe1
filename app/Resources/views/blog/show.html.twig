@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset ('css/style.css') }}">
+{% endblock %}
+
+{% block body %}
+{{ include ('blog/post.html.twig', {'post': post}) }}
+<h1>Les commentaires</h1>
+{% for comment in comments %}
+    <time datetime="{{ comment.createdAt|date('Y-m-d H:i:s') }}">{{ comment.createdAt|date('d/m/Y H:i') }}<time>
+    <p>{{ comment.content }}</p>
+{% endfor %}
+
+{% include 'commentaires/index.html.twig' %}
+
+{% endblock %}
